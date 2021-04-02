@@ -1,2 +1,0 @@
-//https://github.com/mpatric/mp3agic
-//https://openjfx.io/javadoc/16/
