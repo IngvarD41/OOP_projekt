@@ -1,7 +1,6 @@
 package org.openjfx;
 
 import javafx.application.Platform;
-
 import java.util.Scanner;
 
 class MediaControl implements Runnable {
@@ -25,12 +24,12 @@ class MediaControl implements Runnable {
 
             switch (input) {
                 case "play": {
-                    MainApp.mediaPlayer.play();
+                    MainApp.mediaView.getMediaPlayer().play();
                     System.out.println("PLAYING");
                     break;
                 }
                 case "pause": {
-                    MainApp.mediaPlayer.pause();
+                    MainApp.mediaView.getMediaPlayer().pause();
                     System.out.println("PAUSED");
                     break;
                 }
