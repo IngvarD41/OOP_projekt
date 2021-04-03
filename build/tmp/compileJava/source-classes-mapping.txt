@@ -1,11 +1,11 @@
-org/openjfx/MusicCollection.java
- org.openjfx.MusicCollection
+org/openjfx/MediaControl.java
+ org.openjfx.MediaControl
 org/openjfx/Song.java
  org.openjfx.Song
  org.openjfx.Song$1
  org.openjfx.Song$2
  org.openjfx.Song$3
-org/openjfx/MediaControl.java
- org.openjfx.MediaControl
 org/openjfx/MainApp.java
  org.openjfx.MainApp
+org/openjfx/MusicCollection.java
+ org.openjfx.MusicCollection

@@ -14,7 +14,6 @@ import java.util.Collections;
 
 public class MusicCollection {
     private ArrayList<Song> songList = new ArrayList<>();
-    private ArrayList<MediaPlayer> songListMediaPlayer = new ArrayList<>();
 
     public ArrayList<Song> getSongList() {
         return songList;
