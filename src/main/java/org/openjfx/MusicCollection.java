@@ -2,6 +2,7 @@ package org.openjfx;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.Collections;
 
 public class MusicCollection {
     private ArrayList<Song> songList = new ArrayList<>();
+    private ArrayList<MediaPlayer> songListMediaPlayer = new ArrayList<>();
 
     public ArrayList<Song> getSongList() {
         return songList;

@@ -3,6 +3,8 @@ package org.openjfx;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +16,7 @@ public class Song extends Mp3File {
     private String songAlbum;
     private String songIndex;
     private File songFile;
+    private MediaPlayer songMediaPlayer;
 
     public Song(String canonicalPath) throws InvalidDataException, IOException, UnsupportedTagException {
         super(canonicalPath, 65536, true);
@@ -22,6 +25,7 @@ public class Song extends Mp3File {
         this.songArtist = this.getId3v2Tag().getArtist();
         this.songAlbum = this.getId3v2Tag().getAlbum();
         this.songFile = new File(canonicalPath);
+        this.songMediaPlayer = new MediaPlayer(new Media(this.getSongURI()));
     }
 
     public String getSongTitle() {
@@ -38,6 +42,10 @@ public class Song extends Mp3File {
 
     public File getSongFile() {
         return songFile;
+    }
+
+    public MediaPlayer getSongMediaPlayer() {
+        return songMediaPlayer;
     }
 
     public String getSongURI() {
