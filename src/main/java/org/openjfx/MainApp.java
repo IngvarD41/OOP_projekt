@@ -15,8 +15,15 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Media media1 = new Media("file:/home/san/test.mp3");
-        Media media2 = new Media("file:/home/san/test2.mp3");
+        MusicCollection musicCollection = new MusicCollection();
+        musicCollection.setSongList("songs/");
+        musicCollection.sortByArtist();
+        musicCollection.printMusicCollection();
+
+        System.out.println(musicCollection.getSongList().get(0).getSongFile().toURI().toString());
+
+        Media media1 = new Media(musicCollection.getSongList().get(0).getSongURI());
+        Media media2 = new Media(musicCollection.getSongList().get(0).getSongURI());
 
         // tehakse mediaPlayerid ja lisatakse need mediaPlayerite listi
         ArrayList<MediaPlayer> mediaPlayers = new ArrayList<>();
