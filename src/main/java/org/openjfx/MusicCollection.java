@@ -2,13 +2,9 @@ package org.openjfx;
 
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
-import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -42,16 +38,16 @@ public class MusicCollection {
     }
 
     void printMusicCollection() {
-        System.out.printf("+---------------------------------------------------" +
+        System.out.printf("+--------------------------------------------" +
+                "-----------------------------------------------------------+%n");
+        System.out.printf("| %-2s | %-30s | %-30s | %-30s |%n","  ", "Title", "Artist", "Album");
+        System.out.printf("+-------------------------------------------" +
                 "------------------------------------------------------------+%n");
-        System.out.printf("| %-2s | %-5s | %-30s | %-30s | %-30s |%n","  " ,"Index", "Title", "Artist", "Album");
-        System.out.printf("+--------------------------------------------------" +
-                "-------------------------------------------------------------+%n");
         for (Song song : this.getSongList()) {
             System.out.printf("| %-2s ",songList.indexOf(song)+1);
-            song.printFormatedSong("| %-5s | %-30s | %-30s | %-30s |%n");
+            song.printFormattedSong("| %-30s | %-30s | %-30s |%n");
         }
-        System.out.printf("+--------------------------------------------------" +
+        System.out.printf("+------------------------------------------" +
                 "-------------------------------------------------------------+%n");
     }
 }

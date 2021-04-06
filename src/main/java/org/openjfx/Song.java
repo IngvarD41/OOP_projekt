@@ -87,7 +87,7 @@ public class Song extends Mp3File {
         return songTitle + "\t" + songArtist + "\t" + songAlbum;
     }
 
-    public void printFormatedSong(String formatString) {
-        System.out.printf(formatString, songIndex, songTitle, songArtist, songAlbum);
+    public void printFormattedSong(String formatString) {
+        System.out.printf(formatString, songTitle, songArtist, songAlbum);
     }
 }
