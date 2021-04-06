@@ -15,16 +15,13 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Media media1 = new Media("file:/home/san/test.mp3");
-        Media media2 = new Media("file:/home/san/test2.mp3");
-
-        // tehakse mediaPlayerid ja lisatakse need mediaPlayerite listi
-        ArrayList<MediaPlayer> mediaPlayers = new ArrayList<>();
-        mediaPlayers.add(new MediaPlayer(media1));
-        mediaPlayers.add(new MediaPlayer(media2));
+        MusicCollection musicCollection = new MusicCollection();
+        musicCollection.setSongList("songs/");
+        musicCollection.sortByArtist();
+        musicCollection.printMusicCollection();
 
         // mediaView-i lisatakse listist üks mediaPlayer
-        mediaView.setMediaPlayer(mediaPlayers.get(0));
+        mediaView.setMediaPlayer(musicCollection.getSongList().get(3).getSongMediaPlayer());
 
         // uue threadi tekitamine kasutajaga suhtlemiseks
         Runnable runnable = new MediaControl();
