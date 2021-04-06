@@ -17,7 +17,7 @@ public class MainApp extends Application {
         musicCollection.printMusicCollection();
 
         // assigning a MediaPlayer object to mediaView
-        mediaView.setMediaPlayer(musicCollection.getSongList().get(3).getSongMediaPlayer());
+        mediaView.setMediaPlayer(musicCollection.getSongList().get(0).getSongMediaPlayer());
 
         // new thread for user text input
         Runnable runnable = new MediaControl();
