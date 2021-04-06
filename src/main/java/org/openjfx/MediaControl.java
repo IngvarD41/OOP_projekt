@@ -23,22 +23,18 @@ class MediaControl implements Runnable {
             input = scan.nextLine();
 
             switch (input) {
-                case "play": {
+                case "play" -> {
                     MainApp.mediaView.getMediaPlayer().play();
                     System.out.println("PLAYING");
-                    break;
                 }
-                case "pause": {
+                case "pause" -> {
                     MainApp.mediaView.getMediaPlayer().pause();
                     System.out.println("PAUSED");
-                    break;
                 }
-                case "quit": {
-                    Platform.exit();
-                    break;
-                }
-                default:
-                    System.out.println("Vale sisend. Proovi uuesti");
+                case "list" -> MainApp.musicCollection.printMusicCollection();
+                case "quit" -> Platform.exit();
+
+                default -> System.out.println("Vale sisend. Proovi uuesti");
             }
 
         }
