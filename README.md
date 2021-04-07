@@ -4,7 +4,7 @@ Sander Soodla, Ingvar Drikkit
 ## Kirjeldus
 Projekti eesmärgiks oli luua lihtne tekstiridadena terminalis kuvatav mp3 failide mängija. Tahtsime luua programmi, mis
 loeb kaustas olevate mp3 failide ID3 märgiseid ning võimaldab kasutajal laule programmi *playlist*-is sorteerida ning käivitada.
-ID3 siltide lugemiseks kasutasime **mp3agic** teeki ning laulude käivitamiseks rakendasime **JavaFX**-i. Programmi kasutusjuhend 
+ID3 siltide lugemiseks kasutasime [**mp3agic**](https://github.com/mpatric/mp3agic) teeki ning laulude käivitamiseks rakendasime [**JavaFX**](https://openjfx.io)-i. Programmi kasutusjuhend 
 on programmist kätte saadav.
 ***
 ## Klassid
