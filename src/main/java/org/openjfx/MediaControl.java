@@ -116,18 +116,24 @@ class MediaControl implements Runnable {
                     switch (input){
                         case "title" -> {
                             musicCollection.sortByTitle();
+                            chosenSongNr = 0;
+                            mediaView.setMediaPlayer(musicCollection.getSongList().get(chosenSongNr).getSongMediaPlayer());
                             musicCollection.printMusicCollection();
                             System.out.println();
                         }
 
                         case "artist" -> {
                             musicCollection.sortByArtist();
+                            chosenSongNr = 0;
+                            mediaView.setMediaPlayer(musicCollection.getSongList().get(chosenSongNr).getSongMediaPlayer());
                             musicCollection.printMusicCollection();
                             System.out.println();
                         }
 
                         case "album" -> {
                             musicCollection.sortByAlbum();
+                            chosenSongNr = 0;
+                            mediaView.setMediaPlayer(musicCollection.getSongList().get(chosenSongNr).getSongMediaPlayer());
                             musicCollection.printMusicCollection();
                             System.out.println();
                         }
