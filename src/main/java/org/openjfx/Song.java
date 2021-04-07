@@ -14,13 +14,11 @@ public class Song extends Mp3File {
     private String songTitle;
     private String songArtist;
     private String songAlbum;
-    private String songIndex;
     private File songFile;
     private MediaPlayer songMediaPlayer;
 
     public Song(String canonicalPath) throws InvalidDataException, IOException, UnsupportedTagException {
         super(canonicalPath, 65536, true);
-        this.songIndex = this.getId3v2Tag().getTrack();
         this.songTitle = this.getId3v1Tag().getTitle();
         this.songArtist = this.getId3v2Tag().getArtist();
         this.songAlbum = this.getId3v2Tag().getAlbum();
@@ -38,10 +36,6 @@ public class Song extends Mp3File {
 
     public String getSongAlbum() {
         return songAlbum;
-    }
-
-    public File getSongFile() {
-        return songFile;
     }
 
     public MediaPlayer getSongMediaPlayer() {
