@@ -4,7 +4,8 @@ Sander Soodla, Ingvar Drikkit
 ## Kirjeldus
 Projekti eesmärgiks oli luua lihtne tekstiridadena terminalis kuvatav mp3 failide mängija. Tahtsime luua programmi, mis
 loeb kaustas olevate mp3 failide ID3 märgiseid ning võimaldab kasutajal laule programmi *playlist*-is sorteerida ning käivitada.
-ID3 siltide lugemiseks kasutasime **mp3agic** teeki ning laulude käivitamiseks rakendasime **JavaFX**-i.
+ID3 siltide lugemiseks kasutasime **mp3agic** teeki ning laulude käivitamiseks rakendasime **JavaFX**-i. Programmi kasutusjuhend 
+on programmist kätte saadav.
 ***
 ## Klassid
 ### Song
@@ -38,10 +39,11 @@ Kuna see projekt/programm kasutab juba algses staadiumis JavaFX-i ning veel üht
 seadistatud Gradle projekti. Gradle õppimine ja erinevate teekide tööle saamine võttis suhteliselt kaua aega.
 ***
 ## Hinnang
-- **Sander** - Hästi: töötab. Vajab arendamist: näiteks välisest kaustast muusika mängimine pole hetkel võimalik
+- **Sander** - Hästi: töötab.
 - **Ingvar** - Projekti alguses seatud eesmärgid said täidetud, mis on positiivne. Kindlasti on programmi töös lünkasid, 
   mida tuleb parandada. Veahalduse, graafilise liidese ja muu sellisega tegelemegi projekti teises pooles.
 ***
 ## Testimine
-
+Proovisime programmi tööd erinevate mp3 failidega. Hetkel on eelduseks, et kaustas on ainult mp3 failid ja failid on viisakalt 
+sildistatud.
 ***

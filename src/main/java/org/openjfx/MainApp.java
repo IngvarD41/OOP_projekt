@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
+import java.util.Scanner;
+
 public class MainApp extends Application {
 
     static MediaView mediaView = new MediaView();
@@ -12,7 +14,20 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        musicCollection.setSongList("songs/");
+        System.out.println("Insert path of song folder, 'def' for default folder: ");
+
+        Scanner scanner = new Scanner(System.in);
+        String dir = null;
+        if (scanner.hasNextLine()) {
+            dir = scanner.nextLine().trim();
+            if (dir.equals("def")){
+                musicCollection.setSongList("songs/");
+            }
+            else{
+                musicCollection.setSongList(dir);
+            }
+        }
+
         musicCollection.sortByArtist();
         musicCollection.printMusicCollection();
 
