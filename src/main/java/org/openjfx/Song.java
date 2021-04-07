@@ -10,14 +10,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 
-public class Song extends Mp3File {
+class Song extends Mp3File {
     private String songTitle;
     private String songArtist;
     private String songAlbum;
     private File songFile;
     private MediaPlayer songMediaPlayer;
 
-    public Song(String canonicalPath) throws InvalidDataException, IOException, UnsupportedTagException {
+    Song(String canonicalPath) throws InvalidDataException, IOException, UnsupportedTagException {
         super(canonicalPath, 65536, true);
         this.songTitle = this.getId3v1Tag().getTitle();
         this.songArtist = this.getId3v2Tag().getArtist();
@@ -26,27 +26,27 @@ public class Song extends Mp3File {
         this.songMediaPlayer = new MediaPlayer(new Media(this.getSongURI()));
     }
 
-    public String getSongTitle() {
+    String getSongTitle() {
         return songTitle;
     }
 
-    public String getSongArtist() {
+    String getSongArtist() {
         return songArtist;
     }
 
-    public String getSongAlbum() {
+    String getSongAlbum() {
         return songAlbum;
     }
 
-    public MediaPlayer getSongMediaPlayer() {
+    MediaPlayer getSongMediaPlayer() {
         return songMediaPlayer;
     }
 
-    public String getSongURI() {
+    String getSongURI() {
         return this.songFile.toURI().toString();
     }
 
-    public static Comparator<Song> songAlbumComparator = new Comparator<Song>() {
+    static Comparator<Song> songAlbumComparator = new Comparator<Song>() {
         @Override
         public int compare(Song song1, Song song2) {
             String songAlbum1 = song1.getSongAlbum().toUpperCase();
@@ -56,7 +56,7 @@ public class Song extends Mp3File {
         }
     };
 
-    public static Comparator<Song> songTitleComparator = new Comparator<Song>() {
+    static Comparator<Song> songTitleComparator = new Comparator<Song>() {
         @Override
         public int compare(Song song1, Song song2) {
             String songTitle1 = song1.getSongTitle().toUpperCase();
@@ -66,7 +66,7 @@ public class Song extends Mp3File {
         }
     };
 
-    public static Comparator<Song> songArtistComparator = new Comparator<Song>() {
+    static Comparator<Song> songArtistComparator = new Comparator<Song>() {
         @Override
         public int compare(Song song1, Song song2) {
             String songArtist1 = song1.getSongArtist().toUpperCase();
@@ -81,7 +81,7 @@ public class Song extends Mp3File {
         return songTitle + "\t" + songArtist + "\t" + songAlbum;
     }
 
-    public void printFormattedSong(String formatString) {
+    void printFormattedSong(String formatString) {
         System.out.printf(formatString, songTitle, songArtist, songAlbum);
     }
 }

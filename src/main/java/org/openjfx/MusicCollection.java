@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MusicCollection {
+class MusicCollection {
     private ArrayList<Song> songList = new ArrayList<>();
 
-    public ArrayList<Song> getSongList() {
+    ArrayList<Song> getSongList() {
         return songList;
     }
 
