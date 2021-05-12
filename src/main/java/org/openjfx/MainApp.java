@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MainApp extends Application {
@@ -14,17 +17,25 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        System.out.println("Insert path of song folder, 'def' for default folder: ");
+        while(true) {
+            try {
+                System.out.println("Insert path of song folder, 'def' for default folder: ");
 
-        Scanner scanner = new Scanner(System.in);
-        String dir = null;
-        if (scanner.hasNextLine()) {
-            dir = scanner.nextLine().trim();
-            if (dir.equals("def")){
-                musicCollection.setSongList("songs/");
+                Scanner scanner = new Scanner(System.in);
+                String dir = null;
+                if (scanner.hasNextLine()) {
+                    dir = scanner.nextLine().trim();
+                    if (dir.equals("def")) {
+                        musicCollection.setSongList("songs/");
+                    } else {
+                        musicCollection.setSongList(dir);
+                    }
+                }
+                break;
             }
-            else{
-                musicCollection.setSongList(dir);
+            catch(FileNotFoundException e){
+                System.out.println("A problem occurred, please try again.");
+                continue;
             }
         }
 

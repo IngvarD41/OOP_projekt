@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efadeb82-263c-43dc-8399-9b4f7c626583" name="Default Changelist" comment="cleaned imports, added list command">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
-    <list id="d9e84ca6-1ec3-409f-95a6-8964e64b9535" name="Changes by san" comment="" />
+    <list default="true" id="caeb8eca-0b67-4a9e-9099-e4baa365184a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,36 +46,24 @@
       </state>
     </system>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1qfadUGYrvSwxo9hUtEJjkVchgr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1r6l12tyB97YbDE3KcwRVltc9IO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ingvar\Desktop\koolifolderid\OOP\OOP_projekt" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Praktikum7" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunManager">
-    <configuration name="OOP_projekt [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="mp3_player_ver2 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -96,43 +81,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.OOP_projekt [run]" />
+        <item itemvalue="Gradle.mp3_player_ver2 [run]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="efadeb82-263c-43dc-8399-9b4f7c626583" name="Default Changelist" comment="" />
-      <created>1617473189902</created>
+      <changelist id="caeb8eca-0b67-4a9e-9099-e4baa365184a" name="Default Changelist" comment="" />
+      <created>1618304209365</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617473189902</updated>
+      <updated>1618304209365</updated>
     </task>
-    <task id="LOCAL-00001" summary="cleaned imports, added list command">
-      <created>1617725095902</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1617725095903</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned imports, added list command" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned imports, added list command" />
   </component>
 </project>

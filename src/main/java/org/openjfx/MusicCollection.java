@@ -4,6 +4,7 @@ import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,12 +17,20 @@ class MusicCollection {
     }
 
     void setSongList(String path) throws IOException, InvalidDataException, UnsupportedTagException {
-        this.songList.clear();
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
+        if (listOfFiles == null){
+            throw new FileNotFoundException();
+        }
+        this.songList.clear();
         for (File file : listOfFiles) {
-            Song song = new Song(file.getCanonicalPath());
-            this.songList.add(song);
+            try {
+                Song song = new Song(file.getCanonicalPath());
+                this.songList.add(song);
+            }
+            catch (Exception e) {
+                continue;
+            }
         }
     }
 
