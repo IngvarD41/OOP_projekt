@@ -13,7 +13,7 @@ dependencies {
 
 javafx {
     version = "15.0.1"
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media' ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media','javafx.swing' ]
 }
 
 mainClassName = 'org.openjfx.MainApp'

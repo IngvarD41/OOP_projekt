@@ -97,7 +97,10 @@ class MediaControl implements Runnable {
                 }
 
                 case "help" -> System.out.println(commands);
-                case "quit" -> Platform.exit();
+                case "quit" -> {
+                    Platform.exit();
+                    System.exit(0);
+                }
                 case "random" -> {
                     chosenSongNr = (int) (Math.random() * musicCollection.getSongList().size());
                     mediaView.getMediaPlayer().stop();

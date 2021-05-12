@@ -3,9 +3,14 @@ package org.openjfx;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
@@ -16,6 +21,7 @@ class Song extends Mp3File {
     private String songAlbum;
     private File songFile;
     private MediaPlayer songMediaPlayer;
+    private Image songImage;
 
     Song(String canonicalPath) throws InvalidDataException, IOException, UnsupportedTagException {
         super(canonicalPath, 65536, true);
@@ -24,6 +30,9 @@ class Song extends Mp3File {
         this.songAlbum = this.getId3v2Tag().getAlbum();
         this.songFile = new File(canonicalPath);
         this.songMediaPlayer = new MediaPlayer(new Media(this.getSongURI()));
+        byte[] imageData = this.getId3v2Tag().getAlbumImage();
+        BufferedImage img = ImageIO.read(new ByteArrayInputStream(imageData));
+        this.songImage = SwingFXUtils.toFXImage(img, null);
     }
 
     String getSongTitle() {
@@ -44,6 +53,14 @@ class Song extends Mp3File {
 
     String getSongURI() {
         return this.songFile.toURI().toString();
+    }
+
+    public Image getSongImage() {
+        return songImage;
+    }
+
+    public void setSongImage(Image songImage) {
+        this.songImage = songImage;
     }
 
     static Comparator<Song> songAlbumComparator = new Comparator<Song>() {
