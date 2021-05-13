@@ -59,10 +59,6 @@ class Song extends Mp3File {
         return songImage;
     }
 
-    public void setSongImage(Image songImage) {
-        this.songImage = songImage;
-    }
-
     static Comparator<Song> songAlbumComparator = new Comparator<Song>() {
         @Override
         public int compare(Song song1, Song song2) {
@@ -95,10 +91,14 @@ class Song extends Mp3File {
 
     @Override
     public String toString() {
-        return songTitle + "\t" + songArtist + "\t" + songAlbum;
+        return this.returnFormattedSong("| %-30s | %-30s | %-30s");
     }
 
     void printFormattedSong(String formatString) {
         System.out.printf(formatString, songTitle, songArtist, songAlbum);
+    }
+
+   private String returnFormattedSong(String formatString) {
+        return String.format(formatString, songTitle, songArtist, songAlbum);
     }
 }
