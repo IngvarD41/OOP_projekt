@@ -254,10 +254,11 @@ public class MainApp extends Application {
     }
 
     private void setChosenSong() {
-        mediaView.setMediaPlayer(musicCollection.getSongList().get(getChosenSongNr()).getSongMediaPlayer());
-        imageViewAlbum.setImage(musicCollection.getSongList().get(getChosenSongNr()).getSongImage());
-        songName.setText(musicCollection.getSongList().get(getChosenSongNr()).getSongTitle());
-        artistName.setText(musicCollection.getSongList().get(getChosenSongNr()).getSongArtist());
+        Song chosenSong = musicCollection.getSongList().get(getChosenSongNr());
+        mediaView.setMediaPlayer(chosenSong.getSongMediaPlayer());
+        imageViewAlbum.setImage(chosenSong.getSongImage());
+        songName.setText(chosenSong.getSongTitle());
+        artistName.setText(chosenSong.getSongArtist());
         setEndofMediaAndTimer();
     }
 
