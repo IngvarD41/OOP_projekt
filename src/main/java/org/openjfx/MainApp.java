@@ -45,6 +45,7 @@ public class MainApp extends Application {
     private Text artistName;
     private ImageView imageViewPlayPause;
     private Image imagePause;
+    private Image imagePlay;
     private Text time = new Text("00:00/00:00");
 
     private int getChosenSongNr() {
@@ -64,7 +65,7 @@ public class MainApp extends Application {
 
         FileInputStream inputBackground = new FileInputStream("src/main/java/resources/taust.png");
         FileInputStream inputPlay = new FileInputStream("src/main/java/resources/play.png");
-        Image imagePlay = new Image(inputPlay);
+        this.imagePlay = new Image(inputPlay);
         Image imageBackground = new Image(inputBackground);
         BackgroundImage BI = new BackgroundImage(imageBackground,
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -178,7 +179,6 @@ public class MainApp extends Application {
             try {
                 musicCollection.setSongList(selectedDirectory.getAbsolutePath());
                 musicCollection.sortByArtist();
-                musicCollection.printMusicCollection();
                 setChosenSongNr(0);
                 setChosenSong();
             } catch (Exception ex) {
@@ -193,7 +193,6 @@ public class MainApp extends Application {
 
         musicCollection.setSongList("songs/");
         musicCollection.sortByArtist();
-        musicCollection.printMusicCollection();
 
         setChosenSong();
 
@@ -275,6 +274,53 @@ public class MainApp extends Application {
         songsListView.setPrefHeight(300);
         songsListView.setPrefWidth(800);
 
+        Button buttonSortTitle = new Button("Title sort");
+        buttonSortTitle.setOnAction(e -> {
+            musicCollection.sortByTitle();
+            songsArraylist.clear();
+            for (Song song : musicCollection.getSongList()) {
+                songsArraylist.add(song);
+            }
+            songsObs.clear();
+            songsObs.addAll(songsArraylist);
+            songsListView.setItems(songsObs);
+            mediaView.getMediaPlayer().stop();
+            setChosenSongNr(0);
+            setChosenSong();
+            imageViewPlayPause.setImage(imagePlay);
+        });
+
+        Button buttonSortArtist = new Button("Artist Sort");
+        buttonSortArtist.setOnAction(e -> {
+            musicCollection.sortByArtist();
+            songsArraylist.clear();
+            for (Song song : musicCollection.getSongList()) {
+                songsArraylist.add(song);
+            }
+            songsObs.clear();
+            songsObs.addAll(songsArraylist);
+            songsListView.setItems(songsObs);
+            mediaView.getMediaPlayer().stop();
+            setChosenSongNr(0);
+            setChosenSong();
+            imageViewPlayPause.setImage(imagePlay);
+        });
+
+        Button buttonSortAlbum = new Button("Album sort");
+        buttonSortAlbum.setOnAction(e -> {
+            mediaView.getMediaPlayer().stop();
+            musicCollection.sortByAlbum();
+            songsArraylist.clear();
+            for (Song song : musicCollection.getSongList()) {
+                songsArraylist.add(song);
+            }
+            songsObs.clear();
+            songsObs.addAll(songsArraylist);
+            songsListView.setItems(songsObs);
+            setChosenSongNr(0);
+            setChosenSong();
+            imageViewPlayPause.setImage(imagePlay);
+        });
 
         songsListView.getSelectionModel().selectedItemProperty()
                 .addListener(new ChangeListener<Song>() {
@@ -288,8 +334,10 @@ public class MainApp extends Application {
                     }
                 });
 
-        HBox hbox = new HBox(songsListView);
-        Scene scene = new Scene(hbox, 800, 300);
+        VBox vbox = new VBox(10);
+        vbox.getChildren().addAll(buttonSortTitle,buttonSortArtist,buttonSortAlbum);
+        HBox hbox = new HBox(songsListView,vbox);
+        Scene scene = new Scene(hbox, 900, 300);
         Stage stage = new Stage();
         stage.setTitle("");
         stage.setScene(scene);

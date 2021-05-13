@@ -91,7 +91,7 @@ class Song extends Mp3File {
 
     @Override
     public String toString() {
-        return this.returnFormattedSong("| %-30s | %-30s | %-30s");
+        return this.returnFormattedSong(" %-30s | %-30s | %-30s");
     }
 
     void printFormattedSong(String formatString) {
