@@ -5,7 +5,5 @@ org/openjfx/Song.java
  org.openjfx.Song$1
  org.openjfx.Song$2
  org.openjfx.Song$3
-org/openjfx/MediaControl.java
- org.openjfx.MediaControl
 org/openjfx/MainApp.java
  org.openjfx.MainApp
