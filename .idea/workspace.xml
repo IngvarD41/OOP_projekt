@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caeb8eca-0b67-4a9e-9099-e4baa365184a" name="Default Changelist" comment="" />
+    <list default="true" id="caeb8eca-0b67-4a9e-9099-e4baa365184a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <list id="5ab7c8c4-3211-458a-9e03-741482f9b711" name="Changes by san" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +64,26 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/README.md">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="3" end1="3" start2="3" end2="4" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="4" end1="5" start2="5" end2="6" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="6" end1="8" start2="7" end2="12" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="17" end1="20" start2="21" end2="25" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="22" end1="23" start2="27" end2="29" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="24" end1="25" start2="30" end2="33" changelist="5ab7c8c4-3211-458a-9e03-741482f9b711" />
+        <range start1="27" end1="31" start2="35" end2="39" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="32" end1="32" start2="40" end2="41" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="34" end1="39" start2="43" end2="46" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="41" end1="43" start2="48" end2="51" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="44" end1="44" start2="52" end2="53" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="46" end1="48" start2="55" end2="57" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+        <range start1="49" end1="49" start2="58" end2="59" changelist="caeb8eca-0b67-4a9e-9099-e4baa365184a" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1r6l12tyB97YbDE3KcwRVltc9IO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -67,6 +94,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../must-ruut-develop" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
