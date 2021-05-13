@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -18,6 +19,7 @@ import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -203,6 +205,19 @@ public class MainApp extends Application {
         hbox.setAlignment(Pos.CENTER);
         vbox2.setAlignment(Pos.TOP_RIGHT);
         Scene scene = new Scene(borderPane, 500, 200);
+
+        // scene keyboard events
+        scene.setOnKeyPressed(key -> {
+            if (key.getCode() == KeyCode.K) {
+                buttonPlayPause.fire();
+            }
+            else if (key.getCode() == KeyCode.J) {
+                buttonPrev.fire();
+            }
+            else if (key.getCode() == KeyCode.L) {
+                buttonNext.fire();
+            }
+        });
 
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
