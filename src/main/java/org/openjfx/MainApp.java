@@ -159,7 +159,6 @@ public class MainApp extends Application {
         buttonDir.setOnAction(e -> {
             File selectedDirectory = directoryChooser.showDialog(primaryStage);
             mediaView.getMediaPlayer().stop();
-            mediaView.getMediaPlayer().dispose();
             imageViewPlayPause.setImage(imagePlay);
             try {
                 musicCollection.setSongList(selectedDirectory.getAbsolutePath());
@@ -170,6 +169,7 @@ public class MainApp extends Application {
             } catch (Exception ex) {
                 try {
                     musicCollection.setSongList("songs/");
+                    musicCollection.sortByArtist();
                 } catch (Exception exc) {
                     System.out.println(exc.getMessage());
                 }
@@ -182,24 +182,27 @@ public class MainApp extends Application {
 
         setChosenSong();
 
-        imageViewAlbum.setFitHeight(100);
-        imageViewAlbum.setFitWidth(100);
+        imageViewAlbum.setFitHeight(120);
+        imageViewAlbum.setFitWidth(120);
 
         BorderPane borderPane = new BorderPane();
         HBox hbox = new HBox(10);
         VBox vbox = new VBox(2);
+        VBox vbox2 = new VBox(2);
         vbox.getChildren().addAll(songName,artistName);
         hbox.getChildren().addAll(buttonStop,buttonPrev,buttonPlayPause,buttonNext,buttonReload,buttonRandom,buttonDir);
-        borderPane.setMargin(imageViewAlbum, new Insets(20,20,0,20));
-        borderPane.setMargin(hbox, new Insets(30,20,20,20));
-        borderPane.setMargin(vbox, new Insets(50,0,10,20));
-        borderPane.setMargin(time,new Insets(10,10,0,0));
-        borderPane.setRight(time);
+        vbox2.getChildren().add(time);
+        borderPane.setMargin(imageViewAlbum, new Insets(0,20,0,20));
+        borderPane.setMargin(hbox, new Insets(15,20,20,20));
+        borderPane.setMargin(vbox, new Insets(30,0,10,20));
+        borderPane.setMargin(vbox2,new Insets(2,10,0,0));
+        borderPane.setTop(vbox2);
         borderPane.setBottom(hbox);
         borderPane.setLeft(imageViewAlbum);
         borderPane.setCenter(vbox);
         borderPane.setBackground(new Background(BI));
         hbox.setAlignment(Pos.CENTER);
+        vbox2.setAlignment(Pos.TOP_RIGHT);
         Scene scene = new Scene(borderPane, 500, 200);
 
         primaryStage.setScene(scene);
@@ -244,6 +247,4 @@ public class MainApp extends Application {
         artistName.setText(musicCollection.getSongList().get(getChosenSongNr()).getSongArtist());
         setEndofMediaAndTimer();
     }
-
-
 }
