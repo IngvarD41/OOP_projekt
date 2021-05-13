@@ -272,6 +272,7 @@ public class MainApp extends Application {
 
         Button buttonSortTitle = new Button("Title sort");
         buttonSortTitle.setOnAction(e -> {
+            mediaView.getMediaPlayer().stop();
             musicCollection.sortByTitle();
             songsArraylist.clear();
             songsArraylist.addAll(musicCollection.getSongList());
@@ -286,6 +287,7 @@ public class MainApp extends Application {
 
         Button buttonSortArtist = new Button("Artist Sort");
         buttonSortArtist.setOnAction(e -> {
+            mediaView.getMediaPlayer().stop();
             musicCollection.sortByArtist();
             songsArraylist.clear();
             songsArraylist.addAll(musicCollection.getSongList());

@@ -11,6 +11,7 @@ import java.util.Collections;
 
 class MusicCollection {
     private ArrayList<Song> songList = new ArrayList<>();
+    private ArrayList<Song> songListInitial = new ArrayList<>();
 
     ArrayList<Song> getSongList() {
         return songList;
@@ -23,6 +24,7 @@ class MusicCollection {
             throw new FileNotFoundException();
         }
         this.songList.clear();
+        this.songListInitial.clear();
         for (File file : listOfFiles) {
             try {
                 Song song = new Song(file.getCanonicalPath());
@@ -32,17 +34,24 @@ class MusicCollection {
                 continue;
             }
         }
+        this.songListInitial.addAll(songList);
     }
 
     void sortByAlbum() {
+        songList.clear();
+        songList.addAll(songListInitial);
         Collections.sort(songList, Song.songAlbumComparator);
     }
 
     void sortByTitle() {
+        songList.clear();
+        songList.addAll(songListInitial);
         Collections.sort(songList, Song.songTitleComparator);
     }
 
     void sortByArtist() {
+        songList.clear();
+        songList.addAll(songListInitial);
         Collections.sort(songList, Song.songArtistComparator);
     }
 
