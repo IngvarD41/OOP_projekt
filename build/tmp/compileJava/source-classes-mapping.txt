@@ -7,4 +7,3 @@ org/openjfx/MusicCollection.java
  org.openjfx.MusicCollection
 org/openjfx/MainApp.java
  org.openjfx.MainApp
- org.openjfx.MainApp$1

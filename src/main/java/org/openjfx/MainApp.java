@@ -1,39 +1,26 @@
 package org.openjfx;
 
-import com.mpatric.mp3agic.InvalidDataException;
-import com.mpatric.mp3agic.UnsupportedTagException;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static java.lang.Math.round;
 
 public class MainApp extends Application {
 
@@ -46,7 +33,7 @@ public class MainApp extends Application {
     private ImageView imageViewPlayPause;
     private Image imagePause;
     private Image imagePlay;
-    private Text time = new Text("00:00/00:00");
+    private final Text time = new Text("00:00/00:00");
 
     private int getChosenSongNr() {
         return this.chosenSongNr;
@@ -108,9 +95,7 @@ public class MainApp extends Application {
         Image imageList = new Image(inputList);
         ImageView imageViewList = new ImageView(imageList);
         Button buttonList = new Button("", imageViewList);
-        buttonList.setOnAction(e -> {
-            openListWindow();
-        });
+        buttonList.setOnAction(e -> openListWindow());
 
         FileInputStream inputNext = new FileInputStream("src/main/java/resources/next.png");
         Image imageNext = new Image(inputNext);
@@ -206,10 +191,10 @@ public class MainApp extends Application {
         vbox.getChildren().addAll(songName, artistName);
         hbox.getChildren().addAll(buttonList, buttonStop, buttonPrev, buttonPlayPause, buttonNext, buttonReload, buttonRandom, buttonDir);
         vbox2.getChildren().add(time);
-        borderPane.setMargin(imageViewAlbum, new Insets(0, 20, 0, 20));
-        borderPane.setMargin(hbox, new Insets(15, 20, 20, 20));
-        borderPane.setMargin(vbox, new Insets(30, 0, 10, 20));
-        borderPane.setMargin(vbox2, new Insets(2, 10, 0, 0));
+        BorderPane.setMargin(imageViewAlbum, new Insets(0, 20, 0, 20));
+        BorderPane.setMargin(hbox, new Insets(15, 20, 20, 20));
+        BorderPane.setMargin(vbox, new Insets(30, 0, 10, 20));
+        BorderPane.setMargin(vbox2, new Insets(2, 10, 0, 0));
         borderPane.setTop(vbox2);
         borderPane.setBottom(hbox);
         borderPane.setLeft(imageViewAlbum);
@@ -263,11 +248,8 @@ public class MainApp extends Application {
     }
 
     private void openListWindow() {
-        ListView<Song> songsListView = new ListView<Song>();
-        ArrayList<Song> songsArraylist = new ArrayList<>();
-        for (Song song : musicCollection.getSongList()) {
-            songsArraylist.add(song);
-        }
+        ListView<Song> songsListView = new ListView<>();
+        ArrayList<Song> songsArraylist = new ArrayList<>(musicCollection.getSongList());
         ObservableList<Song> songsObs = FXCollections.observableArrayList(songsArraylist);
         songsListView.setItems(songsObs);
         songsListView.setStyle( "-fx-font-family: monospace");
@@ -278,9 +260,7 @@ public class MainApp extends Application {
         buttonSortTitle.setOnAction(e -> {
             musicCollection.sortByTitle();
             songsArraylist.clear();
-            for (Song song : musicCollection.getSongList()) {
-                songsArraylist.add(song);
-            }
+            songsArraylist.addAll(musicCollection.getSongList());
             songsObs.clear();
             songsObs.addAll(songsArraylist);
             songsListView.setItems(songsObs);
@@ -294,9 +274,7 @@ public class MainApp extends Application {
         buttonSortArtist.setOnAction(e -> {
             musicCollection.sortByArtist();
             songsArraylist.clear();
-            for (Song song : musicCollection.getSongList()) {
-                songsArraylist.add(song);
-            }
+            songsArraylist.addAll(musicCollection.getSongList());
             songsObs.clear();
             songsObs.addAll(songsArraylist);
             songsListView.setItems(songsObs);
@@ -311,9 +289,7 @@ public class MainApp extends Application {
             mediaView.getMediaPlayer().stop();
             musicCollection.sortByAlbum();
             songsArraylist.clear();
-            for (Song song : musicCollection.getSongList()) {
-                songsArraylist.add(song);
-            }
+            songsArraylist.addAll(musicCollection.getSongList());
             songsObs.clear();
             songsObs.addAll(songsArraylist);
             songsListView.setItems(songsObs);
@@ -323,15 +299,12 @@ public class MainApp extends Application {
         });
 
         songsListView.getSelectionModel().selectedItemProperty()
-                .addListener(new ChangeListener<Song>() {
-                    public void changed(ObservableValue<? extends Song> observable,
-                                        Song oldValue, Song newValue) {
-                        setChosenSongNr(musicCollection.getSongList().indexOf(newValue));
-                        mediaView.getMediaPlayer().stop();
-                        setChosenSong();
-                        mediaView.getMediaPlayer().play();
-                        imageViewPlayPause.setImage(imagePause);
-                    }
+                .addListener((observable, oldValue, newValue) -> {
+                    setChosenSongNr(musicCollection.getSongList().indexOf(newValue));
+                    mediaView.getMediaPlayer().stop();
+                    setChosenSong();
+                    mediaView.getMediaPlayer().play();
+                    imageViewPlayPause.setImage(imagePause);
                 });
 
         VBox vbox = new VBox(10);
