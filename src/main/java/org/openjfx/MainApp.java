@@ -325,8 +325,7 @@ public class MainApp extends Application {
 
         VBox vbox = new VBox(10);
         vbox.getChildren().addAll(buttonSortTitle,buttonSortArtist,buttonSortAlbum);
-        HBox hbox = new HBox(5);
-        hbox.getChildren().addAll(songsListView,vbox);
+        HBox hbox = new HBox(songsListView,vbox);
         Scene scene = new Scene(hbox, 900, 300);
         Stage stage = new Stage();
         stage.setTitle("");
