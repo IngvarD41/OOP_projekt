@@ -1,12 +1,13 @@
 # Mp3 mängija v.2
 Sander Soodla, Ingvar Drikkit
 ***
-![Näide programmist](programm_pictures/naide1.png)
+![Näide programmist](program_pictures/naide1.png)
 ## Kirjeldus
 Projekti eesmärgiks oli luua lihtsa kasutajaliidesega mp3 failide mängija. Tahtsime luua programmi, mis
 loeb kaustas olevate mp3 failide ID3 märgiseid ning võimaldab kasutajal laule programmi *playlist*-is sorteerida ning käivitada.
 ID3 siltide lugemiseks kasutasime [**mp3agic**](https://github.com/mpatric/mp3agic) teeki ning laulude käivitamiseks rakendasime [**JavaFX**](https://openjfx.io)-i. Programmil kasutusjuhendit
 enam sisseehitatud pole, aga nuppude ikoonid võiksid muusikamängija kontekstis piisavalt kirjeldavad olla (siin lahedat loop või shuffle toggle funktsiooni kahjuks pole). Alati saab ka nuppe katsetada. Klaviatuurisisenditeks on tähed:
+
 - J - käivitab eelmise laulu
 - K - paneb laulu käima/pausile
 - L - käivitab järgmise laulu
@@ -57,4 +58,4 @@ Selle töö tähtaeg saabus ka kuidagi ootamatult.
 Proovisime programmi tööd erinevate mp3 failidega. Hetkel on eelduseks, et failid on viisakalt 
 sildistatud. Kaustas võivad nüüd olla ka teist tüüpi failid, kui programm ei saa nende lugemisega hakkama, siis need jäetakse vahele lihtsalt.
 ***
-![Näide programmist 2](programm_pictures/naide2.png)
+![Näide programmist 2](program_pictures/naide2.png)
