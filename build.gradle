@@ -16,6 +16,7 @@ javafx {
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media','javafx.swing' ]
 }
 
+
 mainClassName = 'org.openjfx.MainApp'
 
 run {
