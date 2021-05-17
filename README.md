@@ -32,13 +32,13 @@ See klass pole vajalik, sest suhtlus ei toimu enam läbi terminali.
 Programmi põhiline osa. Loob MediaView, MusicCollection isendid, tekitab JavaFX-i abil kasutajaliidese. 
 Kasutajaliides võimaldab lisaks laulude mängimisele/peatamisele, järgmise/eelmise/sama/suvalise laulu valimisele ka valida kausta, 
 kust muusikat mängitakse ja avada playlist'i akna. Playlist'i saab sorteerida vastavalt pealkirjale, artistile või albumile. 
-Kasutajaliides näitab ka laulu kestust ning kui üks laul lõppeb, hakkab nimekirjas järgmine käima
+Kasutajaliides näitab ka laulu kestust ning kui üks laul lõppeb, hakkab nimekirjas järgmine käima.
 ***
 ## Protsess ja panus
-- **Sander 1. töö** - JavaFX-i media module'i jaoks Gradle projekti üles seadmine, MainApp ja MediaControl klassid.\
+- **Sander 1. töö** - JavaFX-i media module'i jaoks Gradle projekti üles seadmine, MainApp ja MediaControl klassid.
 Orienteeruv ajakulu: ~9 tundi
 - **Sander 2. töö** - Keyboard ja hiirega vajutatavate nuppude funktsionaalsus, koodi warningute korrastamine ~4 tundi
-- **Ingvar 1. töö** - MusicCollection ja Song klasside kirjutamine, nimetatud klasside ja mp3agic teegi Gradle projekti integreerimine.\
+- **Ingvar 1. töö** - MusicCollection ja Song klasside kirjutamine, nimetatud klasside ja mp3agic teegi Gradle projekti integreerimine.
   Orienteeruv ajakulu: ~6 tundi
 - **Ingvar 2. töö** - GUI üldine disain ~8 tundi
 ***
@@ -46,6 +46,7 @@ Orienteeruv ajakulu: ~9 tundi
 JavaFX pakub küll palju erinevaid võimalusi oma ideede realiseerimiseks, kuid samas oli kohati keeruline aru saada, kus koodis probleemid said tekkida.
 Kood muutus seetõttu kiiresti kirjuks ja halvasti loetavaks, sest teatud osade töölesaamiseks tuli lihtsalt katsetada ja ridu ümber tõsta. Praegu võib probleeme tekitada ka see, kui sorteerimisaknaid tehakse üle ühe korraga lahti, ilmselt on kerge fix, aga üleliia tööd ei häiri see niikuinii.
 Selle töö tähtaeg saabus ka kuidagi ootamatult.
+
 ***
 ## Hinnang
 - **Sander 1. töö** - Hästi: töötab.
